@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\dashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +22,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/dashboard', [dashboardController::class, 'index'])->name('dashboard');
+
+/**
+ * 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ */
+
+
+/**
+ * Web
+ */
+Route::get('/facebook', [FacebookController::class, 'index'])->name('facebook');
+Route::post('/facebook', [FacebookController::class, 'store']);
