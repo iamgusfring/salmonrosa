@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\dashboardController;
 
 /*
@@ -41,3 +42,4 @@ Route::get('/facebook', [FacebookController::class, 'index'])->name('facebook');
 Route::post('/facebook', [FacebookController::class, 'store']);
 
 Route::get('/dashboardfacebook', [FacebookController::class, 'dashboardFacebook'])->name('dashboardfacebook');
+Route::get('/dashboardinstagram', [InstagramController::class, 'dashboardInstagram'])->name('dashboardinstagram');
