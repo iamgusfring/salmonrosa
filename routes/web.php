@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\InstagramController;
-use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\TwitterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,5 +42,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/facebook', [FacebookController::class, 'index'])->name('facebook');
 Route::post('/facebook', [FacebookController::class, 'store']);
 
+Route::get('/instagram', [InstagramController::class, 'index'])->name('instagram');
+Route::post('/instagram', [InstagramController::class, 'store']);
+
+Route::get('/twitter', [TwitterController::class, 'index'])->name('twitter');
+Route::post('/twitter', [TwitterController::class, 'store']);
+
+
+
+
+
 Route::get('/dashboardfacebook', [FacebookController::class, 'dashboardFacebook'])->name('dashboardfacebook');
 Route::get('/dashboardinstagram', [InstagramController::class, 'dashboardInstagram'])->name('dashboardinstagram');
+Route::get('/dashboardtwitter', [TwitterController::class, 'dashboardTwitter'])->name('dashboardtwitter');
