@@ -4,8 +4,8 @@
 
 @include('template.sidebar')
 
-<div>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero recusandae sint aspernatur neque perspiciatis aliquid omnis quisquam? Dolorem sapiente deleniti impedit voluptas odit aut, autem fuga, similique non, perferendis nihil.</p>
+<div class="py-4 container">
+  <h4>Dashboard</h4>
 </div>
 
 @endsection

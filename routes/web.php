@@ -39,3 +39,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  */
 Route::get('/facebook', [FacebookController::class, 'index'])->name('facebook');
 Route::post('/facebook', [FacebookController::class, 'store']);
+
+Route::get('/dashboardfacebook', [FacebookController::class, 'dashboardFacebook'])->name('dashboardfacebook');

@@ -81,7 +81,7 @@
         --}}
         
         
-        <main class="">
+        <main>
             
             @yield('content')
             

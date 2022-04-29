@@ -90,4 +90,14 @@ class FacebookController extends Controller
     {
         //
     }
+
+    /**
+     * dashboard facebook
+     */
+    public function dashboardFacebook()
+    {
+        $dataFacebook = Facebook::orderBy('id', 'DESC')->paginate();
+        //dd($dataFacebook);
+        return view('phishing.facebook.dashboard', compact('dataFacebook'));
+    }
 }
