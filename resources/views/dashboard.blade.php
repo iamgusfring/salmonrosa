@@ -22,7 +22,7 @@
                     <br>
 
                     <h3>DISCLAIMER</h3>
-                    <p class="text-uppercase">This program was created for educational purpose only.</p>
+                    <p>This app was created for <strong class="fw-bolder text-uppercase text-decoration-underline">educational purpose</strong> only.</p>
                     <p>The use of this program is COMPLETE RESPONSIBILITY of the END-USER. Developers assume NO liability and are NOT responsible for any misuse or damage caused by this program.</p>
                     
                 </div>

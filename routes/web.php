@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\TwitterController;
+use App\Http\Controllers\LinkedinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,8 @@ Route::post('/instagram', [InstagramController::class, 'store']);
 Route::get('/twitter', [TwitterController::class, 'index'])->name('twitter');
 Route::post('/twitter', [TwitterController::class, 'store']);
 
+Route::get('/linkedin', [LinkedinController::class, 'index'])->name('linkedin');
+Route::post('/linkedin', [LinkedinController::class, 'store']);
 
 
 
@@ -55,3 +58,4 @@ Route::post('/twitter', [TwitterController::class, 'store']);
 Route::get('/dashboardfacebook', [FacebookController::class, 'dashboardFacebook'])->name('dashboardfacebook');
 Route::get('/dashboardinstagram', [InstagramController::class, 'dashboardInstagram'])->name('dashboardinstagram');
 Route::get('/dashboardtwitter', [TwitterController::class, 'dashboardTwitter'])->name('dashboardtwitter');
+Route::get('/dashboardlinkedin', [LinkedinController::class, 'dashboardLinkedin'])->name('dashboardlinkedin');
