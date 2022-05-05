@@ -8,7 +8,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Twitter') }}</div>
+                <div class="card-header">{{ __('Twitter') }}
+                <p><strong>Share this link: </strong><a href="{{ route('twitter') }}" target="_blank" rel="noopener noreferrer">{{ route('twitter') }}</a></p>
+                </div>
 
                 
                     
