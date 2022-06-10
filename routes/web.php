@@ -7,6 +7,7 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\LinkedinController;
+use App\Http\Controllers\MktController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,8 @@ Route::post('/twitter', [TwitterController::class, 'store']);
 
 Route::get('/linkedin', [LinkedinController::class, 'index'])->name('linkedin');
 Route::post('/linkedin', [LinkedinController::class, 'store']);
+
+Route::get('/mkt', [MktController::class, 'index'])->name('linkedin');
 
 
 

