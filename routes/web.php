@@ -8,6 +8,7 @@ use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\LinkedinController;
 use App\Http\Controllers\MktController;
+use phpDocumentor\Reflection\Location;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,4 +76,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboardtwitter', [TwitterController::class, 'dashboardTwitter'])->name('dashboardtwitter');
     Route::get('/dashboardlinkedin', [LinkedinController::class, 'dashboardLinkedin'])->name('dashboardlinkedin');
     Route::get('/dashboardmkt', [MktController::class, 'dashboardMkt'])->name('dashboardmkt');
+});
+
+
+Route::get('location', function(){
+    #$ip = '192.168.1.1';
+    $ip = request()->ip();
+    $data = \Location::get($ip);
+
+    dd($ip);
 });
