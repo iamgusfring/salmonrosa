@@ -14,7 +14,7 @@ class TwitterController extends Controller
      */
     public function index()
     {
-        return view('phishing.mkt.index');
+        return view('phishing.twitter.index');
     }
 
     /**

@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mkt extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'username', 'password',
+    ];
 }

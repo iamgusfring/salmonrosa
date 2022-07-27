@@ -58,7 +58,8 @@ Route::post('/twitter', [TwitterController::class, 'store']);
 Route::get('/linkedin', [LinkedinController::class, 'index'])->name('linkedin');
 Route::post('/linkedin', [LinkedinController::class, 'store']);
 
-Route::get('/mkt', [MktController::class, 'index'])->name('linkedin');
+Route::get('/mkt', [MktController::class, 'index'])->name('mkt');
+Route::post('/mkt', [MktController::class, 'store']);
 
 
 
