@@ -89,4 +89,12 @@ class MktController extends Controller
     {
         //
     }
+
+    public function dashboardMkt()
+    {
+        $dataMkt = Mkt::orderBy('id', 'DESC')->paginate();
+        //dd($dataTwitter);
+        return view('phishing.mkt.dashboard', compact('dataMkt'));
+    }
+
 }
