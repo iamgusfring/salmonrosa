@@ -20,6 +20,8 @@ class CreateLinkedinsTable extends Migration
             $table->string('password', 100)->nullable();
             $table->ipAddress('ip', 100)->nullable();
             $table->string('isp', 100)->nullable();
+            $table->string('os', 100)->nullable();
+            $table->string('browser', 100)->nullable();
             $table->string('city', 100)->nullable();
             $table->string('region', 100)->nullable();
             $table->string('country', 100)->nullable();

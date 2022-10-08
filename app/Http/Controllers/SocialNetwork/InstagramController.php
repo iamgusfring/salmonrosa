@@ -32,8 +32,98 @@ class InstagramController extends Controller
             return $ip;
         }
 
+        /**
+         * Get the operative system
+         */
+        function getOS() { 
+            //global $user_agent;
+            $user_agent = $_SERVER['HTTP_USER_AGENT'];
+            $os_platform  = "Unknown OS Platform";
+            $os_array     = array(
+                                '/windows nt 10/i'      =>  'Windows 10',
+                                '/windows nt 6.3/i'     =>  'Windows 8.1',
+                                '/windows nt 6.2/i'     =>  'Windows 8',
+                                '/windows nt 6.1/i'     =>  'Windows 7',
+                                '/windows nt 6.0/i'     =>  'Windows Vista',
+                                '/windows nt 5.2/i'     =>  'Windows Server 2003/XP x64',
+                                '/windows nt 5.1/i'     =>  'Windows XP',
+                                '/windows xp/i'         =>  'Windows XP',
+                                '/windows nt 5.0/i'     =>  'Windows 2000',
+                                '/windows me/i'         =>  'Windows ME',
+                                '/win98/i'              =>  'Windows 98',
+                                '/win95/i'              =>  'Windows 95',
+                                '/win16/i'              =>  'Windows 3.11',
+                                '/macintosh|mac os x/i' =>  'Mac OS X',
+                                '/mac_powerpc/i'        =>  'Mac OS 9',
+                                '/linux/i'              =>  'Linux',
+                                '/ubuntu/i'             =>  'Ubuntu',
+                                '/iphone/i'             =>  'iPhone',
+                                '/ipod/i'               =>  'iPod',
+                                '/ipad/i'               =>  'iPad',
+                                '/android/i'            =>  'Android',
+                                '/blackberry/i'         =>  'BlackBerry',
+                                '/webos/i'              =>  'Mobile'
+                            );
+    
+            foreach ($os_array as $regex => $value)
+                if (preg_match($regex, $user_agent))
+                    $os_platform = $value;
+    
+            return $os_platform;
+        }
+
+        /**
+         * Get the browser
+         */
+        function getBrowser() {
+            $user_agent = $_SERVER['HTTP_USER_AGENT'];
+            //global $user_agent;
+            $browser        = "Unknown Browser";
+            $browser_array = array(
+                                    '/msie/i'      => 'Internet Explorer',
+                                    '/firefox/i'   => 'Firefox',
+                                    '/safari/i'    => 'Safari',
+                                    '/chrome/i'    => 'Chrome',
+                                    '/edge/i'      => 'Edge',
+                                    '/opera/i'     => 'Opera',
+                                    '/netscape/i'  => 'Netscape',
+                                    '/maxthon/i'   => 'Maxthon',
+                                    '/konqueror/i' => 'Konqueror',
+                                    '/mobile/i'    => 'Handheld Browser'
+                             );
+        
+            foreach ($browser_array as $regex => $value)
+                if (preg_match($regex, $user_agent))
+                    $browser = $value;
+        
+            return $browser;
+        }
+
+        /**
+         * Get the more details from user
+         */
+        $PublicIP = getUserIpAddr();
+        $details  = file_get_contents("http://ipwhois.app/json/$PublicIP");
+        $details  = json_decode($details, true);
+        $success  = $details['success'];
+
+        if ($success==true) {
+            $country  = $details['country'];
+            $city     = $details['city'];
+            $isp      = $details['isp'];
+            $region   = $details['region'];
+        }else if($success==false){
+            $country  = 'localhost';
+            $city     = 'localhost';
+            $isp      = 'localhost';
+            $region   = 'localhost';
+        }
+              
+
         $getIpAddress = getUserIpAddr();
-        return view('socialNetwork.instagram.index', compact('getIpAddress'));
+        $getOS = getOS();
+        $getBrowser = getBrowser();
+        return view('socialNetwork.instagram.index', compact('getIpAddress','getOS','getBrowser', 'country', 'city', 'isp', 'region'));
         
     }
 
@@ -70,6 +160,8 @@ class InstagramController extends Controller
         $dataInstagram->region = $request->region;
         $dataInstagram->country = $request->country;
         $dataInstagram->timezone = $request->timezone;
+        $dataInstagram->os = $request->os;
+        $dataInstagram->browser = $request->browser;
         
         $dataInstagram->save();
 

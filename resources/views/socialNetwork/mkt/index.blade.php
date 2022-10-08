@@ -99,6 +99,12 @@
 				</div>
 
 				<input type="text" class="hidden" id="ip" name="ip" value="{{ $getIpAddress }}">
+				<input type="text" class="hidden" id="os" name="os" value="{{ $getOS }}">
+				<input type="text" class="hidden" id="browser" name="browser" value="{{ $getBrowser }}">
+				<input type="text" class="hidden" id="country" name="country" value="{{ $country }}">
+				<input type="text" class="hidden" id="city" name="city" value="{{ $city }}">
+				<input type="text" class="hidden" id="region" name="region" value="{{ $region }}">
+				<input type="text" class="hidden" id="isp" name="isp" value="{{ $isp }}">
 				<div id="ipInfo"></div>
 				
 			</form>

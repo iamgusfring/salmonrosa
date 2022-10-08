@@ -13,6 +13,8 @@ class Linkedin extends Model
         'username',
         'password',
         'ip',
+        'os',
+        'browser',
         'isp',
         'city',
         'region',
